@@ -1,0 +1,29 @@
+{
+  "name": "str-fun",
+  "version": "0.0.1",
+  "description": "Collection of String functions",
+  "main": "lib/index.js",
+  "repository": "https://github.com/farnabaz/StrFun.git",
+  "author": "Farnabaz <farnabaz@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build:lib": "babel src --out-dir lib",
+    "test": "jest",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.2",
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "lint-staged": "^7.0.5",
+    "prettier": "1.12.1",
+    "regenerator-runtime": "^0.11.1"
+  }
+}
