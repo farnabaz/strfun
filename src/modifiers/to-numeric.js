@@ -1,3 +1,3 @@
 export default function toNumeric(value) {
-  return String(value).replace(/[^\d]/g, "");
+  return String(value).replace(/[^\d]/g, '')
 }

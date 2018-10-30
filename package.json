@@ -1,29 +1,38 @@
 {
-  "name": "str-fun",
-  "version": "0.0.1",
+  "name": "strfun",
+  "version": "0.1.0",
   "description": "Collection of String functions",
-  "main": "lib/index.js",
-  "repository": "https://github.com/farnabaz/StrFun.git",
+  "main": "dist/strfun.cjs.min.js",
+  "web": "dist/strfun.min.js",
+  "module": "dist/strfun.es.js",
+  "jsnext:main": "dist/strfun.es.js",
+  "repository": "https://github.com/farnabaz/strfun.git",
   "author": "Farnabaz <farnabaz@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build:lib": "babel src --out-dir lib",
+    "build": "bili",
     "test": "jest",
-    "precommit": "lint-staged"
+    "lint": "eslint src/* __tests__/*",
+    "precommit": "lint-staged",
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "prepublishOnly": "npm run build"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.{js}": [
+      "eslint --fix --ext .js",
+      "git add"
+    ]
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.2",
-    "babel-jest": "^22.4.3",
-    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "bili": "^3.1.2",
     "husky": "^0.14.3",
     "jest": "^22.4.3",
     "lint-staged": "^7.0.5",
-    "prettier": "1.12.1",
-    "regenerator-runtime": "^0.11.1"
+    "standard-version": "^4.4.0"
   }
 }
