@@ -1,4 +1,4 @@
-import formatCurrency from "../src/format-currency";
+import { formatCurrency } from "../src";
 
 test("do nothing on formatted strings", () => {
   expect(formatCurrency("12,345")).toBe("12,345");

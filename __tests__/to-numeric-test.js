@@ -1,4 +1,4 @@
-import toNumeric from "../src/to-numeric";
+import { toNumeric } from "../src";
 
 test("do nothing on numeric strings", () => {
   expect(toNumeric("12345")).toBe("12345");
